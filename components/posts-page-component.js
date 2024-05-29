@@ -31,7 +31,7 @@ export function renderPostsPageComponent({ appEl }) {
                       </p>
                     </div>
                     <p class="post-text">
-                      <span class="user-name">Иван Иваныч</span>
+                      <span class="user-name">Иван Иванаа</span>
                       Ромашка, ромашка...
                     </p>
                     <p class="post-date">
