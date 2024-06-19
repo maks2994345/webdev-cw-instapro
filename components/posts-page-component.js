@@ -1,9 +1,9 @@
 import { USER_POSTS_PAGE } from "../routes.js";
 import { renderHeaderComponent } from "./header-component.js";
-import { posts, goToPage, getToken, user } from "../index.js";
+import { posts, goToPage, getToken, user } from "../main.js";
 import { setLike } from "../helpers.js";
 import { like } from "../api.js";
-import { formatDistanceToNow } from 'https://cdn.jsdelivr.net/npm/date-fns@2.29.3/esm/index.js';
+import { formatDistanceToNow } from 'date-fns/formatDistanceToNow';
 import { ru } from 'date-fns/locale'
 
 export function renderPostsPageComponent({ appEl }) {
