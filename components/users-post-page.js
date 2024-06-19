@@ -3,10 +3,8 @@ import { renderHeaderComponent } from "./header-component.js";
 import { posts, goToPage, getToken, user } from "../index.js";
 import { setLike } from "../helpers.js";
 import { like } from "../api.js";
-import { formatDistanceToNow } from 'https://cdn.jsdelivr.net/npm/date-fns@2.29.3/esm/index.js';
-import { ru } from 'date-fns/locale'
 
-export function renderPostsPageComponent({ appEl }) {
+export function renderUsersPostsPageComponent({ appEl }) {
   const render = () => {
        /**
    * TODO: чтобы отформатировать дату создания поста в виде "19 минут назад"
@@ -39,9 +37,7 @@ export function renderPostsPageComponent({ appEl }) {
                       ${post.description}
                     </p>
                     <p class="post-date">
-                      ${formatDistanceToNow(new Date(post.createdAt), {
-                        locale: ru,
-                      })}
+                      19 минут назад
                     </p>
                   </li>`
   }).join("")}  
@@ -77,6 +73,7 @@ export function renderPostsPageComponent({ appEl }) {
       });
     });
   }
+
   }
  render()
 }
