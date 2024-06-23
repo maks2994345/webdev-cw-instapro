@@ -31,7 +31,7 @@ export function renderPostsPageComponent({ appEl }) {
                         <img src="./assets/images/${post.isLiked ? `like-active.svg` : `like-not-active.svg`}">
                       </button>
                       <p class="post-likes-text">
-                        Нравится: <strong>${post.likes.length}</strong>
+                        Нравится: <strong>${post.likes.length > 0 ? post.likes[0].name : '0'}${post.likes.length > 1 ? ' и еще ' + (post.likes.length - 1) : ''}</strong>
                       </p>
                     </div>
                     <p class="post-text">
@@ -41,7 +41,7 @@ export function renderPostsPageComponent({ appEl }) {
                     <p class="post-date">
                       ${formatDistanceToNow(new Date(post.createdAt), {
                         locale: ru,
-                      })}
+                      })} назад
                     </p>
                   </li>`
   }).join("")}  

@@ -1,6 +1,7 @@
 import { renderUploadImageComponent } from './upload-image-component.js';
+import { sanitizeInput } from "../helpers.js";
 
- export function renderAddPostPageComponent({ appEl, onAddPostClick }) {
+export function renderAddPostPageComponent({ appEl, onAddPostClick }) {
   let imageUrl = ''
   let description = ''
   const render = () => {
@@ -34,7 +35,7 @@ import { renderUploadImageComponent } from './upload-image-component.js';
     })
 
     textArea.addEventListener('input', (e) => {
-      description = e.target.value;
+      description = sanitizeInput(e.target.value);
     })
 
     document.getElementById("add-button").addEventListener("click", () => {

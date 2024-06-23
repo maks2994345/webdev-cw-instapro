@@ -40,7 +40,24 @@ export function setLike({
       !isLiked ? `like-active.svg` : `like-not-active.svg`
     }`;
 
-    postLikesText.textContent = `${post.likes.length}`;
+    const likesCount = post.likes.length;
+    let likesText = '';
+
+    if (likesCount === 0) {
+      likesText = '0';
+    } else if (likesCount === 1) {
+      likesText = `${post.likes[0].name}`;
+    } else {
+      likesText = `${post.likes[0].name} и еще ${likesCount - 1}`;
+    }
+
+    postLikesText.textContent = likesText;
   });
+}
+
+export function sanitizeInput(input) {
+  const element = document.createElement('div');
+  element.innerText = input;
+  return element.innerHTML;
 }
 
