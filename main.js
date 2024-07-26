@@ -11,9 +11,9 @@ import {
 import { renderPostsPageComponent } from "./components/posts-page-component.js";
 import { renderLoadingPageComponent } from "./components/loading-page-component.js";
 import {
-  getUserFromLocalStorage,
-  removeUserFromLocalStorage,
-  saveUserToLocalStorage,
+    getUserFromLocalStorage,
+    removeUserFromLocalStorage,
+    saveUserToLocalStorage,
 } from "./helpers.js";
 import {renderUsersPostsPageComponent} from "./components/users-post-page.js";
 
@@ -130,13 +130,13 @@ const renderApp = () => {
           },
         })
              .then((response) => {
+                 goToPage(POSTS_PAGE);
                return response.json()
              })
              .catch((error) => {
                console.error("Ошибка: ", error);
              })
         console.log("Добавляю пост...", { description, imageUrl });
-        goToPage(POSTS_PAGE);
       },
     });
   }

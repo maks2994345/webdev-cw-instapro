@@ -61,3 +61,6 @@ export function sanitizeInput(input) {
   return element.innerHTML;
 }
 
+export function safePrint(text){
+  return text.replaceAll('<','&lt;' ).replaceAll('>','&gt');
+}
